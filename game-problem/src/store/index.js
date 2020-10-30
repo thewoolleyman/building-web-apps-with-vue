@@ -58,6 +58,11 @@ export default new Vuex.Store({
     updateUIState(state, uistate) {
       state.uiState = uistate
     },
+    restart(state) {
+      state.uiState = 'start'
+      state.questionIndex = 0
+      state.score = 0
+    },
     pickQuestion(state, character) {
       character === state.character ? (state.score += 13) : (state.score -= 13)
 
